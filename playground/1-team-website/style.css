@@ -1,6 +1,6 @@
 td{
     width:150px;
-    background-color:aliceblue
+    background-color:royalblue
 }
 th{
     width:150px;
@@ -15,8 +15,8 @@ th{
    
 }
 
-#background{
-    
+#insta-background{
+    background-color:white;
 }
 
 .title-text{
@@ -28,4 +28,52 @@ th{
     margin-top:-600px;
     color:white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.insta-thing{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-700px;
+    width:35%;
+    border:1px black;
+    background-color:white;
+   
+
+
+
+}
+.roster{
+    margin-top:100;
+    margin-left:35%;
+    width: 30%;
+    border: 3px solid black;
+    padding:1px;
+    color:black;
+    
+}
+
+.top-page-links{
+    margin-left:auto;
+    margin-right:auto;
+    width:35%;
+    position:absolute;
+    margin-top:-250px;
+}
+.middle-page-links{
+    margin-left:auto;
+    margin-right:auto;
+    width:35%;
+    position:absolute;
+    margin-top:-200px;
+}
+.bottom-page-links{
+    margin-left:auto;
+    margin-right:auto;
+    width:35%;
+    position:absolute;
+    margin-top:-150px;
+}
+
+a{
+    color:yellow;
 }
