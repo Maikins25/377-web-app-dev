@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pythagorean Theorum Calculator</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script src="confetti.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    
+    <body>
+       <div class="center">
+
+           <h1>Pythagorean Theorum Calculator</h1>
+           
+           <h3>Enter Side A</h3>
+           
+           <input type="number" placeholder="Enter side" id="sideA">
+           <br>
+           <br>
+           <h3>Enter side B</h3>
+           
+           <input type ="number" placeholder ="Enter the other side" id="sideB">
+           
+        
+           <button type="button" class = "noselect blue" onclick = "pythagorean(document.getElementById('sideA').value,document.getElementById('sideB').value)">Calculate</button>
+           <br>
+           <img src="https://www.storyofmathematics.com/wp-content/uploads/2020/07/What-is-a-Pythagorean-Theorem.jpg">
+           
+           <h1 id="answerBox">C = ?</h1>
+        
+           <br>
+<hr>
+           
+           <h1 id="red">Area of Circle Calculator</h1>
+           <br>
+           <h3 id="red">Enter the Radius</h3>
+           
+           <input type="number" placeholder="Radius Here" id="radius" onchange="findCircle(document.getElementById('radius').value) ">
+           <br>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-4P-WyKzrQkNFpPOWSJN8KDWhq8vngljp5Q&usqp=CAU">
+
+           <h1 id="answerBox2" class="red">Area = ?</h1>
+
+<hr>
+
+           <h1 class="green">Volume of Sphere Calculator</h1>
+           <br>
+           <h3 class="green">Enter the Radius</h3>
+           
+           <input type="number" placeholder="Radius Here" onchange="findSphere(this.value) ">
+           <br>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-4P-WyKzrQkNFpPOWSJN8KDWhq8vngljp5Q&usqp=CAU">
+           
+           <h1 id="answerBox3" class="green">Volume = ?</h1>
+           
+           <script src="scripts.js"></script>
+        </div>
+           
+           
+           
+       
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World</title>
+        <link rel="stylesheet" href="styling.css">
+
+        <script>
+            function helloWorld(){
+                var name = document.getElementById("name").value;
+                var hobby= document.getElementById("hobby").value;
+                var response = "Hello, " + name +" I like " + hobby + " too!";
+
+                document.getElementById("greeting").innerHTML += "<br>" + response;
+            }
+        </script>
+    </head>
+
+    <body>
+       Hello everyone, this is my webpage! My name is Max Aikins and this WAD.
+       <ul>
+            <li>yea</li>
+            
+       </ul>
+       <hr>
+       <h1>My first form</h1>
+
+       <form>
+        Your name<br>
+        <input type="text" placeholder="Enter your name" id="name">
+        <br><br>
+        What do you like to do in your spare time?<br>
+        <input type="text" placeholder="Enter your favorite hobby" id="hobby">
+        <br><br>
+
+        <input type="button" value="click me" onclick="helloWorld()">
+       </form>
+
+       <h2 id="greeting">
+
+       </h2>
+
+    </body>
+</html>
