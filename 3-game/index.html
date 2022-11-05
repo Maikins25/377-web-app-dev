@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 1</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <script src="scripts.js"></script>
+        <h1>Get 3 of either token in a row across, down, or diagonal to win!</h1>
+        <h1>click the box to place your token</h1>
+        <h1> X goes first!</h1>
+        <button  onclick="clearBoard()"> Reset Board</button >
+        <h1 id="gameEnd"></h1>
+<svg height="1000" width="1000">
+    <rect id="rect1" x="50" y="50" width="900" height="900" />
+    <line stroke="black" stroke-width="10" x1="50" y1="350" x2="950" y2="350" />
+    <line stroke="black" stroke-width="10" x1="50" y1="650" x2="950" y2="650" />
+    <line stroke="black" stroke-width="10" x1="350" y1="50" x2="350" y2="950" />
+    <line stroke="black" stroke-width="10" x1="650" y1="50" x2="650" y2="950" />
+
+    <symbol id="o">
+        <circle cx="150" cy="150" r="125" stroke="black" fill="white" />
+        
+    </symbol>
+    <symbol id="x">
+        
+        <line x1="0" y1="0" x2="300" y2="300" stroke="black" fill="none"/>
+        <line x1="300" y1="0" x2="0" y2="300" stroke="black" fill="none"/>
+        
+        
+    </symbol>
+
+    
+    <rect id="rect1" x="50" y="50" width="300" height="300" class="clickable" onclick="putMark(1)" />
+    <rect class="clickable" id="rect2" x="350" y="50" width="300" height="300"  onclick="putMark(2)"/>
+    <rect class="clickable" id="rect3" x="650" y="50" width="300" height="300"  onclick="putMark(3)"/>
+    <rect class="clickable" id="rect4" x="50" y="350" width="300" height="300"  onclick="putMark(4)"/>
+    <rect class="clickable" id="rect5" x="350" y="350" width="300" height="300" onclick="putMark(5)"/>
+    <rect class="clickable" id="rect6" x="650" y="350" width="300" height="300" onclick="putMark(6)"/>
+    <rect class="clickable" id="rect7" x="50" y="650" width="300" height="300"  onclick="putMark(7)"/>
+    <rect class="clickable" id="rect8" x="350" y="650" width="300" height="300" onclick="putMark(8)"/>
+    <rect class="clickable" id="rect9" x="650" y="650" width="300" height="300" onclick="putMark(9)"/>
+    
+    <use id="square1x" href="#x" x="50" y="50" visibility="hidden"/>
+    <use id="square2x" href="#x" x="350" y="50" visibility="hidden"/>
+    <use id="square3x" href="#x" x="650" y="50" visibility="hidden"/>
+    <use id="square4x" href="#x" x="50" y="350" visibility="hidden"/>
+    <use id="square5x" href="#x" x="350" y="350" visibility="hidden"/>
+    <use id="square6x" href="#x" x="650" y="350" visibility="hidden"/>
+    <use id="square7x" href="#x" x="50" y="650" visibility="hidden"/>
+    <use id="square8x" href="#x" x="350" y="650" visibility="hidden"/>
+    <use id="square9x" href="#x" x="650" y="650" visibility="hidden"/>
+    
+    <use id="square1o" href="#o" x="50" y="50" visibility="hidden"/>
+    <use id="square2o" href="#o" x="350" y="50" visibility="hidden"/>
+    <use id="square3o" href="#o" x="650" y="50" visibility="hidden"/>
+    <use id="square4o" href="#o" x="50" y="350" visibility="hidden"/>
+    <use id="square5o" href="#o" x="350" y="350" visibility="hidden"/>
+    <use id="square6o" href="#o" x="650" y="350" visibility="hidden"/>
+    <use id="square7o" href="#o" x="50" y="650" visibility="hidden"/>
+    <use id="square8o" href="#o" x="350" y="650" visibility="hidden"/>
+    <use id="square9o" href="#o" x="650" y="650" visibility="hidden"/>
+
+
+    <use id="gameEndUse" href="" x="500" y="950" visibility="hidden"/>
+
+
+</svg>
+       
+      
+        
+    </body>
+</html>

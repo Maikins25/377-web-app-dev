@@ -1,0 +1,15 @@
+rect {
+    fill:white;
+    stroke-width: 3;
+    stroke: #000000;
+}
+
+#rect1{
+    fill:white;
+    stroke-width: 3;
+    stroke: #000000;
+}
+
+#gameEnd{
+    font-size:100px;
+}

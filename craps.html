@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Craps</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="scripts.js"></script>
+
+        <style>
+            .die {
+        fill:#ffffff;
+        stroke-width: 3;
+        stroke: #000000;
+        }
+
+        .pip {
+            stroke: #000000;
+            fill: #000000;
+            visibility: hidden;
+        }
+        input{
+            color:black;
+        }
+        </style>
+
+    <script>
+    
+        let cashMoney = 100;
+            let point = 0;
+            /*
+            * Prepares the game with an initial dice roll.
+            */
+           $(document).ready(function () {
+               rollDice();
+            });
+            
+            /*
+            * Rolls both dice at the same time.
+            */
+           function rollDice() {
+               $("#winLose").html("");
+               var roll1 = rollDie("d1");
+               var roll2 = rollDie("d2");
+               let ifWin = 0;
+               var total = roll1 + roll2;
+               let bet = 0;
+               console.log("Total: " + total);
+               
+               if(point == 0){
+                   
+                   if(total == 7 || total == 11){
+                       $("#winLose").html("win");
+                       point = 0;
+                       $("#point").html("");
+                       ifWin = 1
+                       
+                       
+                    } else if(total == 2 || total == 3 || total == 12){
+                        $("#winLose").html("lose");
+                        point = 0;
+                        $("#point").html("");
+                        ifWin = 1;
+                        
+                        
+                    }
+                    if(ifWin == 1){
+                        
+                    }else{
+                        point = total;
+                        $("#point").html("Point: " + point);
+                        
+                    }
+                }else{
+                    if(point == total){
+                        $("#point").html("");
+                        $("#winLose").html("win");
+                        point = 0;
+                    }else if(total == 7){
+                        $("#point").html("");
+                        $("#winLose").html("lose");
+                        point = 0;
+                        
+                    }else{
+                        
+                    }
+                }
+            }
+
+           
+            /*
+            * Rolls the given die which updates the pips and returns the number rolled.
+            *
+            * dieNum - the ID of the die to roll
+            */
+           
+           
+           
+           function rollDie(dieNum) {
+               
+               // Step 1: hide every pip
+               $("#" + dieNum + " ~ .pip").css("visibility", "hidden");
+               
+               // Step 2: generate a random number between 1 and 6 (inclusive)
+               var roll = Math.ceil(Math.random() * 6);
+               console.log(dieNum + ": " + roll);
+               
+               // Step 3: show the appropriate pips based on the roll
+               if (roll == 1) {
+                   $("#" + dieNum + "p4").css("visibility", "visible");
+                } else if (roll == 2) {
+                    $("#" + dieNum + "p1").css("visibility", "visible");
+                    $("#" + dieNum + "p7").css("visibility", "visible");
+                } else if (roll == 3) {
+                    $("#" + dieNum + "p1").css("visibility", "visible");
+                    $("#" + dieNum + "p4").css("visibility", "visible");
+                    $("#" + dieNum + "p7").css("visibility", "visible");
+                } else if (roll == 4) {
+                    $("#" + dieNum + "p1").css("visibility", "visible");
+                    $("#" + dieNum + "p3").css("visibility", "visible");
+                    $("#" + dieNum + "p5").css("visibility", "visible");
+                    $("#" + dieNum + "p7").css("visibility", "visible");
+                } else if (roll == 5) {
+                    $("#" + dieNum + "p1").css("visibility", "visible");
+                    $("#" + dieNum + "p3").css("visibility", "visible");
+                    $("#" + dieNum + "p4").css("visibility", "visible");
+                    $("#" + dieNum + "p5").css("visibility", "visible");
+                    $("#" + dieNum + "p7").css("visibility", "visible");
+                } else  { // roll == 6
+                    $("#" + dieNum + "p1").css("visibility", "visible");
+                    $("#" + dieNum + "p2").css("visibility", "visible");
+                    $("#" + dieNum + "p3").css("visibility", "visible");
+                    $("#" + dieNum + "p5").css("visibility", "visible");
+                    $("#" + dieNum + "p6").css("visibility", "visible");
+                    $("#" + dieNum + "p7").css("visibility", "visible");
+                }
+                
+                return roll;
+            }
+
+            function gamble(){
+                
+            }
+        </script>
+
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    
+    <h1>Not so crappy (anymore) craps</h1>
+
+    
+    <svg width="500" height="300">
+        
+        <g>
+            <rect id="d1" class="die" x="100" y="100" width="100" height="100" />
+            <circle id="d1p1" class="pip" cx="125" cy="125" r="5"  />
+            <circle id="d1p2" class="pip" cx="125" cy="150" r="5" />
+            <circle id="d1p3" class="pip" cx="125" cy="175" r="5" />
+            <circle id="d1p4" class="pip" cx="150" cy="150" r="5" />
+            <circle id="d1p5" class="pip" cx="175" cy="125" r="5" />
+            <circle id="d1p6" class="pip" cx="175" cy="150" r="5" />
+            <circle id="d1p7" class="pip" cx="175" cy="175" r="5" />
+        </g>
+        
+        <g>
+            <rect id="d2" class="die" x="300" y="100" width="100" height="100" />
+            <circle id="d2p1" class="pip" cx="325" cy="125" r="5"  />
+            <circle id="d2p2" class="pip" cx="325" cy="150" r="5" />
+            <circle id="d2p3" class="pip" cx="325" cy="175" r="5" />
+            <circle id="d2p4" class="pip" cx="350" cy="150" r="5" />
+            <circle id="d2p5" class="pip" cx="375" cy="125" r="5" />
+            <circle id="d2p6" class="pip" cx="375" cy="150" r="5" />
+            <circle id="d2p7" class="pip" cx="375" cy="175" r="5" />
+        </g>
+        
+    </svg>
+    
+    
+    <button onclick="rollDice()">Roll the Dice!</button>
+    
+    <h1 id="winLose"></h1>
+    <h1 id="point"> </h1>
+    <input type="number" id="bet" placeholder="Place your bet here" />
+</body>
+</html>
